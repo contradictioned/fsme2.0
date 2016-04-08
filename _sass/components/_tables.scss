@@ -1,0 +1,31 @@
+@mixin cell($w) {
+  @include grid-column($w);
+  padding: 10px;
+  color: black;
+}
+
+ul.tabular {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    @include grid-row;
+    
+    &.tab-head {
+      font-weight: bold;
+    }
+
+    // generate all column widths
+    @for $w from 1 through 12 {
+      .cell-#{$w} { @include cell($w); }
+    }
+
+    a {
+      display: block;
+      &:hover * {
+        background-color: $yellow;
+      }
+    }
+  }
+  
+}

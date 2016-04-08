@@ -1,0 +1,16 @@
+nav {
+  @include top-bar-container;
+
+  ul {
+    @include menu-simple;
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  margin-bottom: 20px;
+}

@@ -1,0 +1,39 @@
+$tile-color-one: $red !default;
+$tile-color-two: $brown !default;
+$tile-color-three: $yellow !default;
+$tile-color-four: $green !default;
+
+$tile-width: 940px;
+$space-between-tiles: 20px;
+
+@mixin tile-style($name, $color) {
+  &.#{$name} {
+    background: $color;
+    &:hover {
+      background: hover-of($color);
+      color: $body-font-color; //color-of(hover-of($color));
+    }
+  }
+}
+
+.landing-tiles {
+  @include flex-grid-row();
+  justify-content: space-between;
+
+  text-align: center;
+  a {
+    color: $body-font-color;
+
+    width: ($tile-width - $space-between-tiles) / 2;
+    margin-bottom: $space-between-tiles;
+    &:last-child {
+      margin-left: $space-between-tiles;
+    }
+    
+    @include tile-style("tile1", $tile-color-one);
+    @include tile-style("tile2", $tile-color-two);
+    @include tile-style("tile3", $tile-color-three);
+    @include tile-style("tile4", $tile-color-four);
+
+  }
+}

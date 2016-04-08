@@ -1,0 +1,24 @@
+form {
+  //line-height: $line-and-height;
+
+  .form-row {
+    @include grid-row;
+    margin-bottom: 10px;
+
+    label {
+      @include grid-column(3);
+    }
+    input, textarea {
+      @include grid-column(9);
+    }
+  }
+
+  // unfold animation for textareas
+  textarea {
+    transition: height 1s;
+    //@include transition-property(height);
+    //@include transition-duration(1s);
+    height: $line-and-height*1 !important;
+    &:focus { height: $line-and-height*4 !important; }
+    }
+}

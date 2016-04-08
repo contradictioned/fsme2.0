@@ -1,0 +1,14 @@
+@mixin flash-panel {
+  @include panel;
+  &.with-utils { margin-bottom: 0; }
+}
+
+#flash {
+  @include flash-panel;
+  
+  background: $blue;
+
+  h2 {
+    color: $grey;
+  }
+}

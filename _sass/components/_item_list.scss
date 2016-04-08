@@ -1,0 +1,18 @@
+dl {
+  @include grid-row();
+
+  dt {
+    @include grid-column(4);
+    display: inline-block;
+    text-align: right;
+    float: none;
+    padding: 0.5em;
+  }
+
+  dd {
+    @include grid-column(4);
+    display: inline-block;
+    float: none;
+    padding: 0.5em;
+  }
+}
