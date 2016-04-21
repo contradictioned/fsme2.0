@@ -19,3 +19,6 @@ Especially `<section>`-elements are panels.
 **Headlines**: `<h1>` is only allowed once per page, on top. `<h2>` may be used inside panels.
 
 **Tables**: They are nested as follows: `ul > li > a > .cell-x`. You can declare a headline row via `li.tab-head`. You can adjust the width of the columns by the `x` of class `cell-x` where `x` can be 1 upto 12, according to Foundation's grid.
+
+
+Entypo pictograms by Daniel Bruce — www.entypo.com

@@ -1,7 +1,20 @@
-@mixin cell($w) {
-  @include grid-column($w);
+@mixin abstract-cell {
   padding: 10px;
   color: black;
+}
+
+@mixin cell($w) {
+  @include grid-column($w);
+  @include abstract-cell;
+}
+@mixin small_cell($w) {
+  @include grid-column(6);
+  @include abstract-cell;
+}
+@mixin hl-cell {
+  @include grid-column(6);
+  @include abstract-cell;
+  font-weight: bold;
 }
 
 ul.tabular {
@@ -17,7 +30,33 @@ ul.tabular {
 
     // generate all column widths
     @for $w from 1 through 12 {
-      .cell-#{$w} { @include cell($w); }
+      @include breakpoint(medium) {
+        .cell-#{$w} { @include cell($w); }
+      }
+      @include breakpoint(small down) {
+        .cell-#{$w} { @include small_cell($w); }
+      }
+    }
+
+    // for smaller displays we don't show the table header
+    // but the inline headers and add spacing between the lines
+    @include breakpoint(small down) {
+      &.tab-head {
+        display: none !important;
+      }
+      .inline-headline {
+        @include hl-cell;
+      }
+
+      &:not(:last-child) {
+        border-bottom: $spacing solid $grey;
+      }
+    }
+    // on bigger displays there is only the header
+    @include breakpoint(medium) {
+      .inline-headline {
+        display: none !important;
+      }
     }
 
     a {
@@ -26,6 +65,5 @@ ul.tabular {
         background-color: $yellow;
       }
     }
-  }
-  
+  }  
 }

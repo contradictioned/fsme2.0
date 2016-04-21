@@ -26,8 +26,11 @@ $space-between-tiles: 20px;
 
     width: ($tile-width - $space-between-tiles) / 2;
     margin-bottom: $space-between-tiles;
-    &:last-child {
-      margin-left: $space-between-tiles;
+
+    @include breakpoint(medium) {
+      &:nth-child(2):nth-child(4) {
+        margin-left: $space-between-tiles;
+      }
     }
     
     @include tile-style("tile1", $tile-color-one);

@@ -17,7 +17,8 @@
 @import "components/tables";
 @import "components/item_list";
 @import "components/forms";
-
+@import "selectize";
+@import "printer";
 
 
 body {
@@ -26,6 +27,18 @@ body {
   background-color: $bodybgcolor;
   min-height: 100%;
 }
+
+// Set local icon font
+@font-face {
+  font-family: "entypo";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/entypo.eot);
+  src: url('../fonts/entypo.eot?#iefix') format('ie9-skip-eot'),
+       url('../fonts/entypo.woff') format('woff'),
+       url('../fonts/entypo.ttf')  format('truetype');
+}
+
 
 
 header.component-header {

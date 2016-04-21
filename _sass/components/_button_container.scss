@@ -13,8 +13,20 @@
       color: white;
     }
 
-    &:not(:first-child) {
-      margin-left: $spacing;
+    // on big screens the spacing is on the right of the elements    
+    @include breakpoint(medium) {
+      &:not(:last-child) {
+        margin-right: $spacing;
+      }
+    }
+  }
+
+  @include breakpoint(small down) {
+    flex-direction: column;
+
+    // on small screens the spacing is on the bottom of the elements
+    a:not(:last-child) {
+      margin-bottom: $spacing;
     }
   }
 }
