@@ -2,12 +2,10 @@
 @mixin slider-checkbox($color-yes: $black, $bg-yes: $green,
              $color-no: $black, $bg-no: $red) {
   label {
-    // @inlcude line-and-height($line-and-height);
-    //@include row("nested");
+    
     position: relative;
     width: 100%;
-    margin-left: 0;
-    //border: 1px solid $border-color;
+    margin-left: 0;    
 
     input { display: none; }
     div {
@@ -17,11 +15,12 @@
       position: relative;
       z-index: 2;
       text-align: center;
+      
     }
     a {
       position: absolute;
-      top: -1px;
-      left: -1px;
+      //top: -1px;
+      left: 0px;
       width: 50%;
       height: $line-and-height;
       display: block;
@@ -78,6 +77,11 @@ form {
     //@extend .nested;
     @include grid-column(9);
     @include slider-checkbox;
+
+    padding: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+    border: 1px solid $border-color;
     // label { @include line-and-height($line-and-height); }
   }
 }

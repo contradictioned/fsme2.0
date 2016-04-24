@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<h1>Bearbeiten</h1>
+
+<section>
+  <form>
+    <div class="form-row">
+      <label>Titel</label>
+      <input type="text" placeholder="Titel" />
+    </div>
+    <div class="form-row">
+      <label>Antragsnummer</label>
+      <input type="text" disabled="disabled" value="Wird automatisch vergeben"/>
+    </div>
+    <div class="form-row">
+      <label>Aufstockungsantrag</label>
+      
+      <!-- <div class='nested field'> -->
+        <div class='slider'>
+          <label>
+            <input name="finances_motion[is_replenishment]" type="hidden" value="0" /><input id="finances_motion_is_replenishment" name="finances_motion[is_replenishment]" type="checkbox" value="1" />
+            <a></a>
+            <div>
+              Nein
+            </div>
+            <div>
+              Ja
+            </div>
+          </label>
+        </div>
+        <!-- <div></div>
+      </div> -->
+
+
+      
+    </div>
+    <div class="form-row">
+      <label>Beschreibung</label>
+      <textarea></textarea>
+    </div>
+    <div class="form-row">
+      <label>Kürzel</label>
+      <select id="kuerzelding">
+        <option value=""></option>
+        <option value="1">Klein</option>
+        <option value="2">Little</option>
+        <option value="3">Petit</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Betrag</label>
+      <input type="text" placeholder="$$$" />
+    </div>
+  </form>
+</section>
+
+<script type="text/javascript">
+  $("#kuerzelding").selectnice("single", {}, {})[0];
+</script>
