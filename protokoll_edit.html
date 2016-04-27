@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<h1>Anlegen/Bearbeiten</h1>
+
+<section>
+  <form>
+    <div class="form-row">
+      <label>Sitzungsdatum</label>
+      <input type="date" placeholder="Sitzungsdatum" />
+    </div>
+    <div class="form-row">
+      <label>Protokollant</label>
+      <input type="text" placeholder="Theodor Heuss" disabled="disabled"/>
+    </div>
+    <div class="form-row">
+      <label>Sitzungsleitung</label>
+      <select id="sitzungsleitung">
+        <option value=""></option>
+        <option value="1">Klein</option>
+        <option value="2">Little</option>
+        <option value="3">Petit</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Beschlussfähig</label>
+      <div class='slider'>
+        <label>
+          <input name="finances_motion[is_replenishment]" type="hidden" value="0" /><input id="finances_motion_is_replenishment" name="finances_motion[is_replenishment]" type="checkbox" value="1" />
+          <a></a>
+          <div>
+            Nein
+          </div>
+          <div>
+            Ja
+          </div>
+        </label>
+      </div>      
+    </div>
+    <div class="form-row">
+      <label>Anwesenheit FSR</label>
+      <select id="select1" multiple="multiple">
+        <option></option>
+        <option value="t_heuss">Theodor Heuss</option>
+        <option value="h_luebke">Heinrich Lübke</option>
+        <option value="g_heinemann">Gustav Heinemann</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Gäste</label>
+      <input id="select2" type="text" />
+    </div>
+    <div class="button-container">
+      <input type="submit" value="Speichern">
+    </div>
+  </form>
+</section>
+
+<script type="text/javascript">
+  $("#sitzungsleitung").selectnice("single", {}, {})[0];
+  $("#select1").selectnice("multiple", {}, {})[0];
+  $("#select2").selectnice("tags");
+</script>
