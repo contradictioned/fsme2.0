@@ -4,8 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="/js/foundation/foundation.core.js"></script>
+  <script src="/js/foundation/foundation.util.keyboard.js"></script>
+  <script src="/js/foundation/foundation.util.box.js"></script>
+  <script src="/js/foundation/foundation.util.triggers.js"></script>
+  <script src="/js/foundation/foundation.util.mediaQuery.js"></script>
+  <script src="/js/foundation/foundation.util.motion.js"></script>
+  <script src="/js/foundation/foundation.reveal.js"></script>
   <script src="/js/selectize.min.js"></script>
   <script src="/js/selectnice.js"></script>
+
+
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">

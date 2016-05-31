@@ -7,11 +7,37 @@
 
     {% include header.html %}
 
+<div class="small reveal" id="guthaben_einzahlen" data-reveal>
+  <h2>Einzahlen</h2>
+  <form>
+    <div class="form-row">
+      <label>Betrag</label>
+      <input type="text" placeholder="$$$" />
+    </div>
+    <div class="form-row">
+      <label>Autopay</label>
+      <div class='slider'>
+        <label>
+          <input name="finances_motion[is_replenishment]" type="hidden" value="0" /><input id="finances_motion_is_replenishment" name="finances_motion[is_replenishment]" type="checkbox" value="1" />
+          <a></a>
+          <div>
+            Nein
+          </div>
+          <div>
+            Ja
+          </div>
+        </label>
+      </div>
+    </div>
+  </form>
+</div>
+
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
+
 
     {% include footer.html %}
 
