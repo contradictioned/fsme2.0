@@ -27,9 +27,24 @@ $space-between-tiles: 20px;
     width: ($tile-width - $space-between-tiles) / 2;
     margin-bottom: $space-between-tiles;
 
+    h1 {
+      font-size: 110px;
+      line-height: 200px;
+    }
+
     @include breakpoint(medium) {
       &:nth-child(2):nth-child(4) {
         margin-left: $space-between-tiles;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      h1 {
+        font-size: 40px;
+        line-height: 80px;
+      }
+      h3 {
+        line-height: 40px;
       }
     }
     

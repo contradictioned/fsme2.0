@@ -1,12 +1,15 @@
 @import "foundation_settings";
 @import "foundation/foundation";
+@import "font-awesome/font-awesome";
 
+@include foundation-close-button;
 @include foundation-global-styles;
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-forms;
 @include foundation-reveal;
+
 
 @import "components/panel";
 @import "landingpage";
