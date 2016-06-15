@@ -18,6 +18,7 @@
 }
 
 ul.tabular {
+  @include contained;
   list-style-type: none;
   margin-left: 0;
 

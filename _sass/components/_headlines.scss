@@ -1,3 +1,7 @@
 h1 {
   @include grid-row();
 }
+
+h2 {
+  @include contained;
+}

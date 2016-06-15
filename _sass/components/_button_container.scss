@@ -1,22 +1,10 @@
-@mixin button($bg: $turquoise, $size: 100%, $margin: false) {
-
-}
-
 .button-container {
+  @include contained;
   display: flex;
   background-color: white;
 
   a, input[type="submit"] {
-    height: 36px;
-    line-height: 34px;
-    background-color: #3bbec0;
-    text-align: center;
-    flex: 1 1 0px;
-    color: black;
-    border-style: none;
-    &:hover {
-      color: white;
-    }
+    @include button;  
 
     // on big screens the spacing is on the right of the elements    
     @include breakpoint(medium) {

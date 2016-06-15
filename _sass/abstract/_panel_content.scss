@@ -1,0 +1,6 @@
+@mixin contained {
+  margin-left: $spacing;
+  margin-right: $spacing;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}

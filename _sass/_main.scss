@@ -11,11 +11,13 @@
 @include foundation-reveal;
 
 
-@import "components/panel";
+@import "abstract/buttons";
+@import "abstract/panel";
+@import "abstract/panel_content";
 @import "landingpage";
 @import "navigation";
 @import "flash";
-@import "components/buttons";
+@import "components/button_container";
 @import "components/minutes";
 @import "components/headlines";
 @import "components/tables";

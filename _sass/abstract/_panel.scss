@@ -1,0 +1,49 @@
+$util-bg: tint($grey, 10%) !default;
+$util-border-color: shade($grey, 5%) !default;
+
+
+/*
+ * A panel is such a white box as wide as the page is. 
+ */
+@mixin panel($padding: $spacing) {
+  @include grid-row();
+  background: $bgcolor;
+  padding: 0;
+  margin-bottom: $spacing;
+}
+
+@mixin footer-link {
+  color: $black;
+  background: inherit;
+  border: none;
+  padding: 0 8px;
+  margin-left: 5px;
+
+  &:hover {
+    background: $turquoise;
+    color: black;
+  }
+}
+
+section, .panel {
+  @include panel;
+  
+  h2 {
+    font-size: 2.625rem;
+    margin-bottom: 1em;
+  }
+
+  footer {
+    background: $grey;
+    margin-left: 0;
+    margin-bottom: 0;
+    //padding-bottom: 0;
+    padding-right: $spacing;
+    text-align: right;
+
+    a { 
+      @include footer-link; 
+    }
+
+   }
+}

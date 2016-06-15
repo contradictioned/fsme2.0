@@ -20,5 +20,12 @@ Especially `<section>`-elements are panels.
 
 **Tables**: They are nested as follows: `ul > li > a > .cell-x`. You can declare a headline row via `li.tab-head`. You can adjust the width of the columns by the `x` of class `cell-x` where `x` can be 1 upto 12, according to Foundation's grid.
 
+**Modals**: Just add a div with class `reveal`, attribute `data-reveal` and some id. You can add a close button inside with a 
 
-Entypo pictograms by Daniel Bruce — www.entypo.com
+<div class="small reveal" id="guthaben_einzahlen" data-reveal>
+  <h2>Einzahlen</h2>
+
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
