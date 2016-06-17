@@ -1,28 +1,16 @@
 @import "foundation_settings";
 @import "foundation/foundation";
+@include foundation-everything;
+
 @import "font-awesome/font-awesome";
 
-@include foundation-close-button;
-@include foundation-global-styles;
-@include foundation-flex-classes;
-@include foundation-flex-grid;
-@include foundation-typography;
-@include foundation-forms;
-@include foundation-reveal;
+@import "abstract/abstract";
+@import "components/components";
 
-
-@import "abstract/buttons";
-@import "abstract/panel";
-@import "abstract/panel_content";
 @import "landingpage";
 @import "navigation";
 @import "flash";
-@import "components/button_container";
-@import "components/minutes";
-@import "components/headlines";
-@import "components/tables";
-@import "components/item_list";
-@import "components/forms";
+
 @import "selectize";
 @import "printer";
 

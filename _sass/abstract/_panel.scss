@@ -1,10 +1,26 @@
-$util-bg: tint($grey, 10%) !default;
-$util-border-color: shade($grey, 5%) !default;
+/****************************************************************
+ * A panel is a white box as wide as the page is and serves as
+ * default container for content.
+ *
+ * The <section>-Tag is by default a panel, if needed you can also
+ * use the panel-class.
+ *
+ * Optionally, a panel can have a <h2>-headline and a <footer>.
+ * The footer can contain a sequence of <a>-tags:
+ *
+ *     %section
+ *       %h2 Headline
+ *       ...
+ *       %footer
+ *         %a link1
+ *         %a link2
+ *
+ ****************************************************************/
 
 
-/*
- * A panel is such a white box as wide as the page is. 
- */
+$util-bg: #f2f2f2;
+$util-border-color: #e4e4e4;
+
 @mixin panel($padding: $spacing) {
   @include grid-row();
   background: $bgcolor;
@@ -18,6 +34,8 @@ $util-border-color: shade($grey, 5%) !default;
   border: none;
   padding: 0 8px;
   margin-left: 5px;
+  font-size: 14px;
+  line-height: 31px;
 
   &:hover {
     background: $turquoise;
@@ -34,12 +52,12 @@ section, .panel {
   }
 
   footer {
-    background: $grey;
+    background: $util-bg;
     margin-left: 0;
     margin-bottom: 0;
-    //padding-bottom: 0;
     padding-right: $spacing;
     text-align: right;
+    border-top: 1px solid $util-border-color;
 
     a { 
       @include footer-link; 

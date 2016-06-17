@@ -3,26 +3,132 @@ layout: default
 ---
 
 <section>
-  <h2>asdlf</h2>
-  <dl>
-    <dt>Protokollant</dt>
-    <dd>Gustav Heinemann</dd>
-    <dt>Sitzungsleitung</dt>
-    <dd>Theodor Heuss</dd>
-    <dt>Entwurf verschickt am</dt>
-    <dd>1.2.3456</dd>
-    <dt>Veröffentlicht am</dt>
-    <dd>2.3.4567</dd>
-    <dt>Beschlussfähig</dt>
-    <dd>Ja</dd>
-    <dt>Anwesenheit FSR (6)</dt>
-    <dd>Heinrich Lübke, Gustav Heinemann, Theodor Heuss, Heinrich Lübke, Gustav Heinemann, Theodor Heuss</dd>
-    <dt>Gäste (9)</dt>
-    <dd>Heinrich Lübke, Gustav Heinemann, Theodor Heuss, Heinrich Lübke, Gustav Heinemann, Theodor Heuss, Heinrich Lübke, Gustav Heinemann, Theodor Heuss</dd>
-  </dl>
+  <h2>Protokoll vom 1.2.3456</h2>
+  <ul class="item-list">
+    <li>
+      <div class="name">Protokollant</div>
+      <div class="value">Gustav Heinemann</div>
+    </li>
+    <li>
+      <div class="name">Sitzungsleitung</div>
+      <div class="value">Theodor Heuss</div>
+    </li>
+    <li>
+      <div class="name">Entwurf verschickt am</div>
+      <div class="value">1.2.3456</div>
+    </li>
+    <li>
+      <div class="name">Veröffentlicht am</div>
+      <div class="value">2.3.4567</div>
+    </li>
+    <li>
+      <div class="name">Beschlussfähig</div>
+      <div class="value">Ja</div>
+    </li>
+    <li>
+      <div class="name">Anwesenheit FSR (6)</div>
+      <div class="value">Heinrich Lübke, Gustav Heinemann, Theodor Heuss, Heinrich Lübke, Gustav Heinemann, Theodor Heuss</div>
+    </li>
+    <li>
+      <div class="name">Gäste (9)</div>
+      <div class="value">Heinrich Lübke, Gustav Heinemann, Theodor Heuss, Heinrich Lübke, Gustav Heinemann, Theodor Heuss, Heinrich Lübke, Gustav Heinemann, Theodor Heuss</div>
+    </li>
+  </ul>
 
   <footer>
-    <a href="#">A link</a>
-    <a href="#">Anotter link</a>
+    <a href="#">Löschen</a>
+    <a href="#">Bearbeiten</a>
   </footer>
+</section>
+
+<section class="rich-text">
+  <h2>Tagesordnung</h2>
+  <ol>
+    <li><a href="#top1">Festlegung der Tagesordnung</a></li>
+    <li><a href="#top2">Genehmigung von Protokollen</a></li>
+    <li><a href="#top3">Getränke</a></li>
+    <li><a href="#top4">Mitteilungen</a></li>
+    <li><a href="#top5">Verschiedenes</a></li>
+  </ol>
+
+  <footer>
+    <a href="#">TOP anlegen</a>
+  </footer>
+</section>
+
+<section class="rich-text">
+  <a name="top1"></a>
+  <h2>Top 1: Festlegung der Tagesordnung</h2>
+
+</section>
+
+<section class="rich-text">
+  <a name="top2"></a>
+  <h2>Top 2: Genehmigung von Protokollen</h2>
+
+  <footer>Nichts zum Annehmen</footer>
+</section id="#top">
+
+<section class="rich-text">
+  <a name="top3"></a>
+  <h2>Top 3: Getränke</h2>
+
+  <div class="minute-request">
+    <h3>Finanzantrag</h3>
+    <ul class="item-list">
+      <li>
+        <div class="name">Titel</div>
+        <div class="value">Getränke 01/2020</div>
+      </li>
+      <li>
+        <div class="name">Summe</div>
+        <div class="value">100,92€</div>
+      </li>
+      <li>
+        <div class="name">Begründung</div>
+        <div class="value">Die Fachschaft begrüßt das Ausgeben von Geld um weiteres Geld einzunehmen. Um nicht nur zu begrüßen, sondern ausdrücklich zu winken, soll nun Geld ausgegeben werden.</div>
+      </li>
+      <li>
+        <div class="name">Abstimmung</div>
+        <div class="value">9/0/1</div>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    <a href="#">Finanzantrag berichten</a>
+    <a href="#">Antrag anlegen</a>
+    <a href="#">Löschen</a>
+    <a href="#">Bearbeiten</a>
+  </footer>
+</section>
+
+<section class="rich-text">
+  <a name="top4"></a>
+  <h2>Top 4: Mitteilungen</h2>
+
+  <p>Der Fachschaftsrat verfügt über Absätze gewisser Länge. Er begrüßt die Verwendung von Blindtext. Der Fachschaftsrat verfügt über Absätze gewisser Länge. Er begrüßt die Verwendung von Blindtext. Der Fachschaftsrat verfügt über Absätze gewisser Länge. Er begrüßt die Verwendung von Blindtext. Der Fachschaftsrat verfügt über Absätze gewisser Länge. Er begrüßt die Verwendung von Blindtext. Ein Prominentes Beispiel ist:</p>
+
+  <blockquote>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </blockquote>
+
+  <p>Die ein oder andere Auflistung darf nicht fehlen.</p>
+
+  <ul>
+    <li>Ein</li>
+    <li>Punkt</li>
+  </ul>
+  <ol>
+    <li>nach</li>
+    <li>dem</li>
+    <li>anderen</li>
+  </ol>
+
+  <p>Obligatorisch sind <i>unterschiedliche</i> <u>Hervorhebungen</u> und <b>Betonungen</b>.</p>
+</section>
+
+<section>
+  <a name="top5"></a>
+  <h2>Top 5: Verschiedenes</h2>
 </section>

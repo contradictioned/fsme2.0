@@ -81,7 +81,7 @@ $border-color       : darken($default-color, 10%);
   @else { @return $grey-hover; }
 }
 
-$spacing: .5em;
+$spacing: 20px;
 
 $line-and-height: 36px;
 

@@ -1,18 +1,25 @@
-dl {
-  @include grid-row();
+/*****************************************************************
+ * Item lists are basically lists of name-value pairs.
+ *
+ * The general markup is as follows:
+ *
+ *     %ul.item-list
+ *       %li
+ *         .name
+ *         .value
+ ****************************************************************/
+ul.item-list {
 
-  dt {
-    @include grid-column(4);
-    display: inline-block;
-    text-align: right;
-    float: none;
-    padding: 0.5em;
-  }
+  li {
+    @include flex-grid-row();
+    line-height: $line-and-height;
 
-  dd {
-    @include grid-column(4);
-    display: inline-block;
-    float: none;
-    padding: 0.5em;
+    .name {
+      @include flex-grid-column(3, 0);
+    }
+
+    .value {
+      @include flex-grid-column(9);
+    }
   }
 }

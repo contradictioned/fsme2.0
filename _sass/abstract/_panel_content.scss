@@ -1,6 +1,10 @@
-@mixin contained {
-  margin-left: $spacing;
-  margin-right: $spacing;
-  margin-top: $spacing;
-  margin-bottom: $spacing;
+@mixin contained($margin: $spacing) {
+  margin-left: $margin;
+  margin-right: $margin;
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+.content {
+  @include contained;
 }

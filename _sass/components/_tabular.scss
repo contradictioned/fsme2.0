@@ -1,3 +1,35 @@
+/*****************************************************************
+ * Tabulars are implemented using unordered lists since these
+ * allow nicer options for small displays.
+ *
+ * The markup is:
+ * 
+ *     %ul.tabular 
+ *       %li.tab-head
+ *         [.cell-x Header]
+ *       %li
+ *         [.inline-headline Header
+ *         .cell-x Content]
+ *       %li ...
+ *
+ * The size of the single cells can be determined using classes
+ * cell-1, cell-2, ... cell-12.
+ *
+ * The additional .inline-headline in every cell is used for small
+ * screens. While on a big screen the overall look is tableish:
+ *
+ *     Content1 | Content2 | ...
+ *
+ * on a small screen it gets more like a definition list:
+ *
+ *     Head1    Content1
+ *     Head2    Content2
+ *     ...      ...
+ *
+ ****************************************************************/
+
+
+
 @mixin abstract-cell {
   padding: 10px;
   color: black;

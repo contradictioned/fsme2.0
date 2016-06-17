@@ -1,0 +1,35 @@
+/*****************************************************************
+ * Rich Text is designed to be used in a panel or something similar.
+ ****************************************************************/
+
+@mixin rich-text {
+  b {
+    font-weight: bold;
+  }
+  i {
+    font-style: italic;
+  }
+  ul, ol {
+    list-style-position: outside;
+  }
+  ul li {
+    list-style-type: disc;
+  }
+  * {
+    font-weight: normal;
+  }
+
+  p, blockquote, ul, ol {
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+
+  blockquote {
+    padding-top: 0;
+    margin-left: $spacing;
+  }
+}
+
+.rich-text {
+  @include rich-text;
+}

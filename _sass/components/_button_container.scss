@@ -1,15 +1,40 @@
+/*****************************************************************
+ * The button container should be placed in a single section with n Buttons in it.
+ * On a big screen, the buttons are aligned horizontally:
+ *
+ *     +-------------------------------+
+ *     | |   Button1  | |   Button2  | |
+ *     +-------------------------------+
+ *
+ * If the screen size shrinks down, the buttons stack vertically:
+ *
+ *     +----------------+
+ *     | |   Button1  | |
+ *     | +------------+ |
+ *     | |   Button2  | |
+ *     +----------------+
+ *
+ * The markup is plain and supports <a>- and <input>-tags.
+ *
+ *     %section
+ *       .button-container
+ *         %a link
+ *         %input submit
+ ****************************************************************/
+
 .button-container {
-  @include contained;
+  @include contained($spacing / 2);
   display: flex;
   background-color: white;
 
   a, input[type="submit"] {
     @include button;  
 
-    // on big screens the spacing is on the right of the elements    
+    // on big screens the spacing is on the right of the elements
+    //   B1 | B2 | ... | Bb  
     @include breakpoint(medium) {
       &:not(:last-child) {
-        margin-right: $spacing;
+        margin-right: $spacing / 2;
       }
     }
   }
@@ -19,7 +44,7 @@
 
     // on small screens the spacing is on the bottom of the elements
     a:not(:last-child) {
-      margin-bottom: $spacing;
+      margin-bottom: $spacing / 2;
     }
   }
 }
