@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<h1>Neuer Antrag</h1>
+
+<section>
+  <form>
+    <div class="form-row">
+      <label>Finanzantrag</label>
+      <select id="finanzantrag">
+        <option value=""></option>
+        <option value="1">Klein</option>
+        <option value="2">Little</option>
+        <option value="3">Petit</option>
+      </select>
+    </div>
+    <hr />
+    <div class="form-row">
+      <label>Antragssteller</label>
+      <select id="antragsteller">
+        <option></option>
+        <option value="t_heuss">Theodor Heuss</option>
+        <option value="h_luebke">Heinrich Lübke</option>
+        <option value="g_heinemann">Gustav Heinemann</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Antragstext</label>
+      <input type="text" />
+    </div>
+    <div class="form-row">
+      <label>Angenommen</label>
+      <div class='slider'>
+        <label>
+          <input name="finances_motion[is_replenishment]" type="hidden" value="0" /><input id="finances_motion_is_replenishment" name="finances_motion[is_replenishment]" type="checkbox" value="1" />
+          <a></a>
+          <div>
+            Nein
+          </div>
+          <div>
+            Ja
+          </div>
+        </label>
+      </div>      
+    </div>
+    <div class="form-row">
+      <label>Modus</label>
+      <div class='slider'>
+        <label>
+          <input name="finances_motion[is_replenishment]" type="hidden" value="0" /><input id="finances_motion_is_replenishment" name="finances_motion[is_replenishment]" type="checkbox" value="1" />
+          <a></a>
+          <div>
+            Abstimmung
+          </div>
+          <div>
+            Augensch. Mehrheit
+          </div>
+        </label>
+      </div>      
+    </div>
+    <div class="form-row triple">
+      <label>Abstimmung</label>
+      <fieldset>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </fieldset>
+    </div>
+  </form>
+</section>
+
+<script type="text/javascript">
+  $("#finanzantrag").selectnice("single", {}, {})[0];
+  $("#antragsteller").selectnice("single", {}, {})[0];
+</script>
