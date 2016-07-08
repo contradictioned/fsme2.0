@@ -2,7 +2,10 @@
 layout: default
 ---
 
-<h1>Meta</h1>
+<h1>
+  Meta
+  <a href="#" class="help-icon"><i class="fa fa-question-circle"></i></a>
+</h1>
 
 <!--***********************************************************-->
 <!--***********************************************************-->
@@ -52,6 +55,17 @@ layout: default
     <a href="#">Button 1</a>
     <a href="#">Button 2</a>
   </div>
+  <div class="button-container">
+    <a href="#">Button 1</a>
+    <a href="#">Button 2</a>
+    <a href="#">Button 3</a>
+  </div>
+</section>
+
+<section class="dangerzone">
+  <h2>Dangerzone</h2>
+
+  <p>This section has the class dangerzone and is styled accordingly.</p>
 </section>
 
 <!--***********************************************************-->
@@ -105,8 +119,8 @@ layout: default
         <div class="cell-1">H</div>
         <div class="cell-2">Head</div>
     </li>
-    <li>
-      <a href="#">
+    <a href="#">
+      <li>
         <div class="inline-headline">Head</div>
         <div class="cell-2">Value</div>
         <div class="inline-headline">Headline</div>
@@ -117,10 +131,10 @@ layout: default
         <div class="cell-1">V</div>
         <div class="inline-headline">Head</div>
         <div class="cell-2">Value</div>
-      </a>
-    </li>
-    <li>
-      <a href="#">
+      </li>
+    </a>
+    <a href="#">
+      <li>
         <div class="inline-headline">Head</div>
         <div class="cell-2">Value</div>
         <div class="inline-headline">Headline</div>
@@ -131,8 +145,8 @@ layout: default
         <div class="cell-1">V</div>
         <div class="inline-headline">Head</div>
         <div class="cell-2">Value</div>
-      </a>
-    </li>
+      </li>
+    </a>
   </ul>
 </section>
 
@@ -157,3 +171,91 @@ layout: default
     </li>
   </ul>
 </section>
+
+<!--***********************************************************-->
+<!--***********************************************************-->
+<section>
+  <h2>Live Search</h2>
+
+  <div class="live-search">
+    <input type="text" placeholder="Search..." id="#livesearch">
+  </div>
+</section>
+
+<!--***********************************************************-->
+<!--***********************************************************-->
+<section>
+  <h2>Forms</h2>
+
+  <form>
+    <div class="form-row">
+      <label>Text input</label>
+      <input type="text" placeholder="Textinput" />
+    </div>
+    <div class="form-row">
+      <label>Disabled</label>
+      <input type="text" value="Not available" disabled="true" />
+    </div>
+    <div class="form-row">
+      <label>Date input</label>
+      <input type="date"/>
+    </div>
+    <div class="form-row">
+      <label>Single Choice</label>
+      <select id="single-choice">
+        <option value=""></option>
+        <option value="1">First</option>
+        <option value="2">Second</option>
+        <option value="3">Third</option>
+        <option value="4">Fourth</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Multiple Choice</label>
+      <select id="multiple-choice" multiple>
+        <option value=""></option>
+        <option value="1">First</option>
+        <option value="2">Second</option>
+        <option value="3">Third</option>
+        <option value="4">Fourth</option>
+      </select>
+    </div>
+    <div class="form-row triple">
+      <label>Vote</label>
+      <input type="text" placeholder="Pro" />
+      <input type="text" placeholder="Abs" />
+      <input type="text" placeholder="Con" />
+    </div>
+    <div class="form-row">
+      <label>Switch</label>
+      <div class="switch">
+        <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch">
+        <label class="switch-paddle" for="yes-no">
+          <span class="switch-active" aria-hidden="true">Yes</span>
+          <span class="switch-inactive" aria-hidden="true">No</span>
+        </label>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Text area</label>
+      <textarea></textarea>
+    </div>
+    <div class="form-row">
+      <label>Text editor</label>
+      <div class="nested editor">
+        <textarea class="trumbowyg"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <textarea class="trumbowyg"></textarea>
+    </div>
+    <div class="button-container">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</section>
+
+<script type="text/javascript">
+  $("#single-choice").selectnice("single", {}, {});
+  $("#multiple-choice").selectnice("multiple", {}, {});
+</script>

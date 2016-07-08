@@ -27,7 +27,7 @@
   display: flex;
   background-color: white;
 
-  a, input[type="submit"] {
+  a, input[type="submit"], button {
     @include button;  
 
     // on big screens the spacing is on the right of the elements

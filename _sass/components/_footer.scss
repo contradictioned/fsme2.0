@@ -1,0 +1,10 @@
+footer.site-footer {
+  @include panel;
+
+  background-color: $turquoise;
+  margin-bottom: 0;
+
+  ul {
+    @include menu-base;
+  }
+}

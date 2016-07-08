@@ -7,7 +7,7 @@ $selectize-font-family: inherit !default;
 $selectize-font-smoothing: auto;
 $selectize-font-size: $global-weight-normal;
 $selectize-font-weight: $global-weight-thin; // as in gumby
-$selectize-line-height: $line-and-height - 2px;
+$selectize-line-height: $line-and-height;
 
 $selectize-color-text: black;
 $selectize-color-border: $border-color;
@@ -59,6 +59,9 @@ $selectize-caret-margin: 0 2px 0 0 !default;
 
 .selectize-control {
     position: relative;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    @include flex-grid-column(9);
 }
 
 .selectize-dropdown, .selectize-input, .selectize-input input {
@@ -80,7 +83,7 @@ $selectize-caret-margin: 0 2px 0 0 !default;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    @include grid-column(9);
+    
     //@include box-sizing("border-box");
 
     & > .item {
@@ -120,7 +123,7 @@ $selectize-caret-margin: 0 2px 0 0 !default;
         padding: $selectize-padding-item-y $selectize-padding-item-x;
         background: $selectize-color-item;
         border: $selectize-width-item-border solid $selectize-color-item-border;
-        line-height: $line-and-height - 2 * $selectize-margin-item-y - 2px;
+        line-height: $line-and-height; // - 2 * $selectize-margin-item-y - 2px;
 
         &.active {
             background: $selectize-color-item-active;
@@ -224,8 +227,8 @@ $selectize-caret-margin: 0 2px 0 0 !default;
     &.input-active, &.input-active input { cursor: text; }
 
     &:after {
-        font-family: "entypo";
-        content: "\e764";
+        font-family: "FontAwesome";
+        content: $fa-var-angle-down;
         color: $selectize-arrow-color;
         display: block;
         position: absolute;
@@ -234,6 +237,6 @@ $selectize-caret-margin: 0 2px 0 0 !default;
         height: 0px;
     }
     &.dropdown-active:after {
-        content: "\e767";
+        content: $fa-var-angle-up;
     }
 }

@@ -2,7 +2,11 @@
 layout: default
 ---
 
-<div id="flash">
+<div id="flash" data-closable>
+  <button class="close-button" aria-label="Close alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+
   <h2>Information</h2>
   <ul>
     <li>Hello User!</li>

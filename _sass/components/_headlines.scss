@@ -1,5 +1,14 @@
 h1 {
   @include grid-row();
+
+  a.help-icon {
+    color: $grey;
+    float: right !important;
+
+    &:hover {
+      color: $grey-hover;
+    }
+  }
 }
 
 h2, h3 {

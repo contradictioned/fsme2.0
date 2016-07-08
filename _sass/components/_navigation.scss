@@ -1,8 +1,46 @@
+/*****************************************************************
+ * The navigation has two display modes:
+ * On a big screen (breakpoint: large) it is shown in a row like:
+ *
+ *     +------+--------+----+----+-----+----+
+ *     | LOGO |        | P1 | P2 | ... | Pk |
+ *     +------+--------+----+----+-----+----+
+ *
+ * On a small screen there is only the logo and the sandwich icon:
+ *
+ *     +------+-----+---+
+ *     | LOGO |     | ≡ |
+ *     +------+-----+---+
+ * 
+ * Which pops up a column of Menu entries:
+ *
+ *     +---+---------+
+ *     | LO|   P1    |
+ *     +---+---------+
+ *         |   ...   |
+ *         +---------+
+ *         |   Pk    |
+ *         +---------+
+ ****************************************************************/
+
+/*
+ * Basic appearence
+ */
+
 nav {
+  @include flex-grid-row;
   @include top-bar-container;
+  //flex-flow: space-between;
+
+  .menu-opener {
+    color: white;
+    font-size: 2em;
+  }
 
   ul {
-    @include menu-simple;
+    @include menu-base;
+    @include menu-expand;
+    @include menu-direction(horizontal);
 
     li {
       a {
@@ -13,4 +51,40 @@ nav {
   }
 
   margin-bottom: 20px;
+}
+
+
+/*
+ * Responsivity
+ */
+
+nav {  
+  @include breakpoint(medium down) {
+    flex-wrap: wrap;
+    #main-menu {
+      @include flex-grid-column(12);    
+      ul {
+        // On small sreens, make the menu vertical
+        @include menu-direction(vertical);
+      }
+    }
+  }
+}
+
+
+/*
+ * Hiding menu on small devices
+ */
+.no-js {
+  @include breakpoint(small only) {
+    nav {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
 }

@@ -61,7 +61,7 @@
 			}, selectize_settings));
 			/* END TAG SELECT */
 
-			if (type === "live" || type == "livesearch") {
+			if ($select.length > 0 && type === "live" || type == "livesearch") {
 				/* BEGIN LIVESEARCH SPECIFIC */
 				var selectize = $select[0].selectize;
 				selectize.on('item_add', callback_item_added);

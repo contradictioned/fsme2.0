@@ -1,89 +1,143 @@
 
-@mixin slider-checkbox($color-yes: $black, $bg-yes: $green,
-             $color-no: $black, $bg-no: $red) {
+/***********************************
+ * Layout part:
+ *
+ * Forms on a big screen are set up as follows:
+ *
+ * cols: 3         9
+ *   +---------+--------------+
+ *   | label   |  input       |
+ *   +---------+--------------+
+ *   | label   |  input       |
+ *   +---------+--------------+
+ *
+ * On a small screen this changes to:
+ *
+ *  +-----------+
+ *  |   label   |
+ *  +-----------+
+ *  |   input   |
+ *  +-----------+
+ *  
+ */
+@mixin label_layout {
   label {
-    
-    position: relative;
-    width: 100%;
-    margin-left: 0;    
+    @include breakpoint(small down) {
+      // for small devices
+      @include flex-grid-column(12);
+    }
+    @include breakpoint(medium) {
+      // for big devices
+      @include flex-grid-column(3);
+    }
+  }
+}
 
-    input { display: none; }
-    div {
-      height: 100%;
-      width: 50%;
-      float: left;
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      
+@mixin input_layout {
+  input, textarea, .nested, select {
+    @include breakpoint(small down) {
+      // for small devices
+      @include flex-grid-column(12);
     }
-    a {
-      position: absolute;
-      //top: -1px;
-      left: 0px;
-      width: 50%;
-      height: $line-and-height;
-      display: block;
-      z-index: 1;
-      color: $color-no;
-      background-color: $bg-no;
-      // @include border-radius(0);
-      // @include transition(all 0.3s ease-out);
+    @include breakpoint(medium) {
+      // for big devices
+      @include flex-grid-column(9);
+      margin-bottom: 0;
     }
-    input:checked ~ a {
-      left: 50%;
-      margin-left: 1px;
-      color: $color-yes;
-      background-color: $bg-yes;
-      // @include transition(all 0.3s ease-out);
+  }
+
+  .editor {
+    padding: 0;
+  }
+}
+
+
+/*
+ * The triple field is there for votes, it is as wide as the normal input but split up into
+ *
+ *   +-----+-----+-----+
+ *   | Pro | Abs | Con |
+ *   +-----+-----+-----+
+ */
+@mixin triple_field_layout() {
+  &.triple {
+    input {
+      @include breakpoint(small down) {
+        // for small devices
+        @include flex-grid-column(4);
+        margin-bottom: 0;
+
+        // align display
+        flex: 0 0 31%;
+        max-width: 31%;
+        &:not(:first-of-type) {
+          margin-left: 3%;
+        }
+      }
+      @include breakpoint(medium) {
+        // for big devices
+        @include flex-grid-column(3);
+        margin-bottom: 0;
+
+        // align display
+        flex: 0 0 23%;
+        &:not(:first-of-type) {
+          margin-left: 3%;
+        }
+      }
+    }
+  }
+}
+
+ /*
+ * End Layout
+ ***********************************/
+
+
+/***********************************
+ * Style part:
+ */
+
+@mixin input_style {
+  line-height: $line-and-height;
+  input, textarea {
+    border: $input-border;
+    // Focus state
+    &:focus {
+      border: $input-border-focus;
+      background-color: $input-background-focus;
+      outline: none;
+      box-shadow: $input-shadow-focus;
+
+      @if has-value($input-transition) {
+        transition: $input-transition;
+      }
+    }
+
+    &:disabled {
+      background-color: $grey;
     }
   }
 }
 
 
 
+
+
+ /* The rest */
+
 form {
   @include contained;
 
   .form-row {
-    @include grid-row;
+    @include flex-grid-row;
     margin-bottom: $global-margin;
 
-    label {
-      @include breakpoint(small down) {
-        @include grid-column(12);
-      }
-      @include breakpoint(medium) {
-        @include grid-column(3);
-      }
-    }
-    input, textarea {
-      @include breakpoint(small down) {
-        @include grid-column(12);
-      }
-      @include breakpoint(medium) {
-        @include grid-column(9);
-        margin-bottom: 0;
-      }
-    }
+    @include label_layout;
+    @include input_layout;
+    @include triple_field_layout;
 
-    &.triple {
-      fieldset {
-        @include grid-column(9);
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-
-
-        display: flex;
-        justify-content: space-between;
-        input {
-          //@include grid-column(3);
-          width: 30%;
-          display: inherit;
-          //margin-left: $spacing;
-        }
-      }
-    }
+    @include input_style;
   }
 
   // unfold animation for textareas
@@ -93,15 +147,22 @@ form {
     &:focus { height: $line-and-height*4 !important; }
   }
 
-  .slider {
-    //@extend .nested;
-    @include grid-column(9);
-    @include slider-checkbox;
+  .switch {
+    @include flex-grid-column(9);
+    
+    $switch-paddle-width: 20rem;
+    @include switch-size(
+      $font-size: 1rem,
+      $width: $switch-paddle-width,
+      $height: 2rem,
+      $paddle-width: $switch-paddle-width/2,
+      $paddle-offset: 0.25rem
+    );
 
-    padding: 0 !important;
-    padding-left: 0;
-    padding-right: 0;
-    border: 1px solid $border-color;
-    // label { @include line-and-height($line-and-height); }
+    .switch-paddle {
+      max-width: none;
+    }
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }

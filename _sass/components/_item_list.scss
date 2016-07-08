@@ -8,6 +8,25 @@
  *         .name
  *         .value
  ****************************************************************/
+
+$qr-width: 100px;
+$qr-width-toggle: 300px;
+
+@mixin qr-value {
+  .qr {  
+    max-width: $qr-width;
+    embed { width: 100%; }
+    .min { display: none }
+    .max { display: block }
+  }
+
+  &.active {
+    .qr { max-width: $qr-width-toggle; }
+    .min { display: block !important }
+    .max { display: none !important }
+  }
+}
+
 ul.item-list {
 
   li {
@@ -20,6 +39,8 @@ ul.item-list {
 
     .value {
       @include flex-grid-column(9);
+
+      @include qr-value;
     }
   }
 }

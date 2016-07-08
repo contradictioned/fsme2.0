@@ -1,12 +1,23 @@
 <footer class="site-footer">
-
-  <div class="wrapper">
-
-
-  </div>
-
+  <ul class="align-center">
+    <li>
+      <a href="#">Issuetracker</a>
+    </li>
+    <li>
+      <a href="#">Version: 1.2.3</a>
+    </li>
+  </ul>
 </footer>
 
 <script type="text/javascript">
   $(document).foundation();
+  
+  $.trumbowyg.svgPath = '/icons/icons.svg';
+  $('.trumbowyg').trumbowyg({
+    lang: 'de',
+    btns: [
+      'btnGrp-semantic',
+      'btnGrp-lists',
+    ]
+  });
 </script>

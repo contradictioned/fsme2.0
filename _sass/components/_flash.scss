@@ -5,10 +5,24 @@
 
 #flash {
   @include flash-panel;
-  
+  position: relative;
+
+  .close-button {
+    @include close-button;
+  }
+
   background: $blue;
 
   h2 {
     color: $grey;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      border-left: 4px solid $yellow;
+      padding-left: $spacing;
+      background: $grey;
+    }
   }
 }
