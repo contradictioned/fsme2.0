@@ -8,6 +8,12 @@ This is a fork of Wolff09's [FSME](https://github.com/Wolff09/FSME/) (shoutouts 
 - Someone has invented [Flexbox](https://www.w3.org/TR/css-flexbox-1/)
 
 
+Playing around
+--------------
+
+Install jekyll `gem install jekyll`, and run `jekyll s` in the root of this repository.
+
+
 Documentation
 -------------
 
@@ -22,10 +28,10 @@ Especially `<section>`-elements are panels.
 
 **Modals**: Just add a div with class `reveal`, attribute `data-reveal` and some id. You can add a close button inside with a 
 
-<div class="small reveal" id="guthaben_einzahlen" data-reveal>
-  <h2>Einzahlen</h2>
+    <div class="small reveal" id="guthaben_einzahlen" data-reveal>
+      <h2>Einzahlen</h2>
 
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
