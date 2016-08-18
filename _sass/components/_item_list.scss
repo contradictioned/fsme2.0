@@ -29,6 +29,8 @@ $qr-width-toggle: 300px;
 
 ul.item-list {
 
+  margin-top: 1em;
+
   li {
     @include flex-grid-row();
     line-height: $line-and-height;

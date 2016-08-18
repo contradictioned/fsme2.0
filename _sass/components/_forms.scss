@@ -142,6 +142,8 @@ form {
     &:focus { height: $line-and-height*4 !important; }
   }
 
+
+  // switch animation
   .switch {
     @include flex-grid-column(9);
     
@@ -159,5 +161,17 @@ form {
     }
     padding-left: 0 !important;
     padding-right: 0 !important;
+
+
+    // color-options for yes-no
+    &.yes-no {
+      .switch-paddle {
+        background-color: $red;
+      }
+
+      input:checked ~ .switch-paddle {
+        background-color: $green;
+      }
+    }
   }
 }

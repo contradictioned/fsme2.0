@@ -113,20 +113,20 @@ layout: default
 
   <ul class="tabular">
     <li class="tab-head">
-        <div class="cell-2">Head</div>
-        <div class="cell-3">Headline</div>
-        <div class="cell-4">Headline</div>
-        <div class="cell-1">H</div>
-        <div class="cell-2">Head</div>
+      <div class="cell-2">Left (Default)</div>
+      <div class="cell-3 center">Centered</div>
+      <div class="cell-4 right">Right</div>
+      <div class="cell-1">H</div>
+      <div class="cell-2">Head</div>
     </li>
     <a href="#">
       <li>
         <div class="inline-headline">Head</div>
         <div class="cell-2">Value</div>
         <div class="inline-headline">Headline</div>
-        <div class="cell-3">Valueueeu</div>
+        <div class="cell-3 center">Valueueeu</div>
         <div class="inline-headline">Headline</div>
-        <div class="cell-4">Valueueeu</div>
+        <div class="cell-4 right">Valueueeu</div>
         <div class="inline-headline">H</div>
         <div class="cell-1">V</div>
         <div class="inline-headline">Head</div>
@@ -138,9 +138,9 @@ layout: default
         <div class="inline-headline">Head</div>
         <div class="cell-2">Value</div>
         <div class="inline-headline">Headline</div>
-        <div class="cell-3">Valueueeu</div>
+        <div class="cell-3 center">Valueueeu</div>
         <div class="inline-headline">Headline</div>
-        <div class="cell-4">Valueueeu</div>
+        <div class="cell-4 right">Valueueeu</div>
         <div class="inline-headline">H</div>
         <div class="cell-1">V</div>
         <div class="inline-headline">Head</div>
@@ -148,6 +148,25 @@ layout: default
       </li>
     </a>
   </ul>
+
+  <p>Small computations with class="total"</p>
+  <ul class="tabular">
+    <li class="tab-head">
+      <div class="cell-8">Thing</div>
+      <div class="cell-4">Amt</div>
+    </li>
+    <li>
+      <div class="cell-8">A</div>
+      <div class="cell-4">6</div>
+    </li>
+    <li>
+      <div class="cell-8">B</div>
+      <div class="cell-4">7</div>
+    </li>
+    <li>
+      <div class="cell-8"></div>
+      <div class="cell-1 total">13</div>
+    </li>
 </section>
 
 
@@ -229,7 +248,16 @@ layout: default
     <div class="form-row">
       <label>Switch</label>
       <div class="switch">
-        <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch">
+        <input class="switch-input" id="switcheroo" type="checkbox" name="exampleSwitch">
+        <label class="switch-paddle" for="switcheroo">
+          <span class="switch-active" aria-hidden="true">Yes</span>
+          <span class="switch-inactive" aria-hidden="true">No</span>
+        </label>
+      </div>
+    </div><div class="form-row">
+      <label>YesNo-Switch</label>
+      <div class="switch yes-no">
+        <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch2">
         <label class="switch-paddle" for="yes-no">
           <span class="switch-active" aria-hidden="true">Yes</span>
           <span class="switch-inactive" aria-hidden="true">No</span>
@@ -254,6 +282,13 @@ layout: default
     </div>
   </form>
 </section>
+
+<!--***********************************************************-->
+<!--***********************************************************-->
+<section>
+  <p class="no-content-msg">No content message.</p>
+</section>
+
 
 <script type="text/javascript">
   $("#single-choice").selectnice("single", {}, {});
