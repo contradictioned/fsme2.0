@@ -4,7 +4,7 @@
  *
  * The markup is:
  * 
- *     %ul.tabular 
+ *     %ul.tabular
  *       %li.tab-head
  *         [.cell-x Header]
  *       %li
@@ -29,10 +29,21 @@
  ****************************************************************/
 
 
-
 @mixin abstract-cell {
   padding: 10px;
   color: black;
+
+  &.total {
+    border-top: 4px double $turquoise;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
 }
 
 @mixin cell($w) {
@@ -60,8 +71,6 @@ ul.tabular {
   }
 
   li {
-    @include flex-grid-row;
-
     // Table header style
     &.tab-head {
       font-weight: bold;
@@ -70,17 +79,17 @@ ul.tabular {
 
     // generate all column widths
     @for $w from 1 through 12 {
-      @include breakpoint(large) {
+      @include breakpoint(medium) {
         .cell-#{$w} { @include cell($w); }
       }
-      @include breakpoint(medium down) {
+      @include breakpoint(small down) {
         .cell-#{$w} { @include small_cell($w); }
       }
     }
 
     // for smaller displays we don't show the table header
     // but the inline headers and add spacing between the lines
-    @include breakpoint(medium down) {
+    @include breakpoint(small down) {
       &.tab-head {
         display: none !important;
       }
@@ -88,15 +97,17 @@ ul.tabular {
         @include hl-cell;
       }
 
-      border-bottom: 2px solid $grey !important;
+      &:not(:last-child) {
+        border-bottom: $spacing solid $grey;
+      }
     }
     // on bigger displays there is only the header
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       .inline-headline {
         display: none !important;
       }
     }
 
-  }  
+    @include flex-grid-row;
+  }
 }
-

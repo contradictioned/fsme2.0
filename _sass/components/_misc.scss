@@ -6,3 +6,12 @@
   border: 3px solid $red;
   background-color: $yellow;
 }
+
+.no-content-msg {
+  @include contained;
+
+  background-color: $grey;
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+  text-align: center;
+}
