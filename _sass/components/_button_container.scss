@@ -23,9 +23,12 @@
  ****************************************************************/
 
 .button-container {
-  @include contained($spacing / 2);
   display: flex;
   background-color: white;
+
+  &:not(:first-child) {
+    margin-top: $spacing / 2;
+  }
 
   a, input[type="submit"], button {
     @include button;  

@@ -73,9 +73,9 @@
 }
 
 ul.tabular {
-  @include contained($spacing / 2);
   list-style-type: none;
-
+  margin-left: 0;
+  
   a {
     &:hover * {
       background-color: $yellow;

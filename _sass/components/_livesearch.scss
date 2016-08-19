@@ -1,6 +1,5 @@
 .live-search {
   @include flex-grid-row;
-  @include contained;
 
   input, .selectize-control {
     @include flex-grid-column(12);

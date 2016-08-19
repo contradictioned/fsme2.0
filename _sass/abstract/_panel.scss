@@ -24,7 +24,7 @@ $util-border-color: #e4e4e4;
 @mixin panel($padding: $spacing) {
   @include grid-row();
   background: $bgcolor;
-  padding: 0;
+  padding: $spacing;
   margin-bottom: $spacing;
 }
 
@@ -53,8 +53,9 @@ section, .panel {
 
   footer {
     background: $util-bg;
-    margin-left: 0;
-    margin-bottom: 0;
+    margin-left: -$spacing;
+    margin-bottom: -$spacing;
+    margin-right: -$spacing;
     padding-right: $spacing;
     text-align: right;
     border-top: 1px solid $util-border-color;

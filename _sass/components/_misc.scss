@@ -8,8 +8,6 @@
 }
 
 .no-content-msg {
-  @include contained;
-
   background-color: $grey;
   padding-top: $spacing;
   padding-bottom: $spacing;

@@ -122,8 +122,6 @@
 /* The rest */
 
 form {
-  @include contained;
-
   .form-row {
     @include flex-grid-row;
     margin-bottom: $global-margin;
