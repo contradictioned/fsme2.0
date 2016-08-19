@@ -1,12 +1,18 @@
 .minute-request {
   border: 1px solid #e4e4e4;
+  margin-bottom: $spacing;
 
   h3 {
+    margin-left: $spacing;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   ul {
     margin-bottom: 0;
+  }
+
+  footer {
+    margin: 0;
   }
 }
