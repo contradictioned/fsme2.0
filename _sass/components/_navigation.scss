@@ -75,16 +75,14 @@ nav {
 /*
  * Hiding menu on small devices
  */
-.no-js {
-  @include breakpoint(small only) {
-    nav {
-      display: none;
-    }
+@include breakpoint(small only) {
+  #main-menu {
+    display: none;
   }
+}
 
-  @include breakpoint(medium) {
-    .title-bar {
-      display: none;
-    }
+@include breakpoint(medium) {
+  .menu-opener {
+    display: none;
   }
 }

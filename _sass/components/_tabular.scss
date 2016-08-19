@@ -34,15 +34,27 @@
   color: black;
 
   &.total {
-    border-top: 4px double $turquoise;
+    font-weight: bold;
   }
 
-  &.center {
-    text-align: center;
+  @include breakpoint(medium) {
+    &.total {
+      border-top: 4px double $turquoise;
+    }
+
+    &.center {
+      text-align: center;
+    }
+
+    &.right {
+      text-align: right;
+    }
   }
 
-  &.right {
-    text-align: right;
+  &.space {
+    @include breakpoint(small down) {
+      display: none !important;
+    }
   }
 }
 

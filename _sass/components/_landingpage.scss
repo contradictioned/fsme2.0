@@ -24,7 +24,10 @@ $space-between-tiles: 20px;
   a {
     color: $body-font-color;
 
-    width: ($tile-width - $space-between-tiles) / 2;
+    
+    flex-grow: 1;
+    flex-basis: ($tile-width - $space-between-tiles) / 2;
+    flex-shrink: 1;
     margin-bottom: $space-between-tiles;
 
     h1 {
@@ -32,13 +35,14 @@ $space-between-tiles: 20px;
       line-height: 200px;
     }
 
-    @include breakpoint(medium) {
-      &:nth-child(2):nth-child(4) {
-        margin-left: $space-between-tiles;
-      }
+    &:nth-child(2), &:nth-child(4) {
+      margin-left: $space-between-tiles;
     }
 
-    @include breakpoint(medium down) {
+    @include breakpoint(medium) {
+    }
+
+    @include breakpoint(small down) {
       h1 {
         font-size: 40px;
         line-height: 80px;
@@ -52,6 +56,5 @@ $space-between-tiles: 20px;
     @include tile-style("tile2", $tile-color-two);
     @include tile-style("tile3", $tile-color-three);
     @include tile-style("tile4", $tile-color-four);
-
   }
 }

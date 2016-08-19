@@ -142,6 +142,9 @@ form {
     &:focus { height: $line-and-height*4 !important; }
   }
 
+  textarea {
+    resize: none;
+  }
 
   // switch animation
   .switch {
