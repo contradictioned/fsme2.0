@@ -7,6 +7,8 @@ This is a fork of Wolff09's [FSME](https://github.com/Wolff09/FSME/) (shoutouts 
 - [Gumby](http://www.gumbyframework.com/) has been discontinued
 - Someone has invented [Flexbox](https://www.w3.org/TR/css-flexbox-1/)
 
+**This is not a valid design template anymore**: Since the intranet has further evolved, look there for current code. For everybody else: enjoy the history ;)
+
 
 Playing around
 --------------
