@@ -3,8 +3,12 @@
 }
 
 .dangerzone {
+  &:not(:first-child) {
+    margin-top: $spacing / 2;
+  }
   border: 3px solid $red;
   background-color: $yellow;
+  padding: $spacing / 2;
 }
 
 .no-content-msg {
@@ -12,4 +16,14 @@
   padding-top: $spacing;
   padding-bottom: $spacing;
   text-align: center;
+}
+
+.error:not(input) {
+  color: $red;
+}
+
+.warning {
+  background-color: $yellow;
+  font-weight: bold;
+  padding: $spacing / 2;
 }

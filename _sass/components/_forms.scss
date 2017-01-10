@@ -135,9 +135,22 @@ form {
 
   // unfold animation for textareas
   textarea {
+    //box-sizing: content-box; // for the line-height calculations to work
     transition: height 1s;
     height: $line-and-height*1 !important;
-    &:focus { height: $line-and-height*4 !important; }
+    &:focus {
+      &:not([rows]) {
+        height: $line-and-height*4 !important;
+      }
+      &[rows] { // this is the fallback for all textareas with more than 20 rows
+        height: auto !important; // transition to 'height: auto' does not work
+      }
+      @for $i from 1 through 20 {
+        &[rows="#{$i}"] {
+          height: $line-and-height*$i !important;
+        }
+      }
+    }
   }
 
   textarea {
